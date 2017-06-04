@@ -20,3 +20,8 @@ An identifier of the subject who carried out the experiment.
 
 Please read README.md to see how the original data set was manipulated.
 The modified, tidy data set (tidydata.txt) gives the mean values of each variable - the standard deviation or means of all the features in the original data set - and groups it by subject and activity type.
+
+Variables:
+activityname: the name of the activity (laying, sitting, standing, walking, walking downstairs, walking upstairs)
+subjectnumber: the number that identifies each subject that participated in the study
+The other variables refer to the mean or standard deviation of various features recorded by the Samsung machine.
