@@ -40,7 +40,7 @@ combined <- rbind(test, train)
 
 # Uses descriptive activity names to name the activities in the data set
 combined <- merge(activitylabels, combined, by="activitynumber")
-set(combined, j = 'activitynumber', value = NULL)
+combined$activitynumber <- NULL
 
 #5 From the data set in step 4, creates a second, independent tidy data set 
 ## with the average of each variable for each activity and each subject
@@ -50,4 +50,4 @@ tidymean <- combined %>% group_by(activityname, subjectnumber) %>%
         summarise_each(funs(mean))
 
 setwd("UCI HAR Dataset")
-data.table::fwrite(x = tidymean, file = "tidydata.txt", quote = FALSE)
+data.table::fwrite(x = tidymean, file = "tidydata.txt", quote = FALSE, row.name=FALSE)
